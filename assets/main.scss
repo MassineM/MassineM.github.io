@@ -1,0 +1,193 @@
+@import "layout";
+
+.bodyPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  main {
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}
+
+.mainArticle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 80vw;
+  left: 5vw;
+  .profiletop {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .pid {
+      position: relative;
+      margin: MAX(2vh,2vw);
+      width: MAX(17vh,17vw);
+      height: MAX(17vh,17vw);
+      opacity: 0.7;
+    }
+  }
+
+  .title {
+    font-family: "Source Code Pro", monospace;
+    font-size: MIN(6vh, 6vw);
+    color: $primaryM;
+    height: fit-content;
+    background: linear-gradient(
+      to right,
+      rgba($primaryD, 0.2),
+      rgba(0, 0, 0, 0)
+    );
+    padding: MIN(3vh, 3vw);
+    margin: MIN(3vh, 3vw);
+    position: relative;
+    display:inline-block;
+    width: auto;
+  }
+  .text {
+    font-family: "Share Tech Mono", monospace;
+    font-size: MIN(2.5vh, 2.5vw);
+    position: relative;
+    z-index: 0;
+    color: rgb(176, 202, 207);
+  }
+
+  .hiveElmnt {
+    background: linear-gradient(
+      to right,
+      rgba($secondaryD, 0.6),
+      rgba($secondaryM, 0.2)
+    );
+    display: block;
+    @extend .text;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: MIN(2vh, 2vw);
+    width: auto;
+    height: auto;
+    span{
+      width: MAX(3vh, 3vw);
+      height: MAX(3vh, 3vw);
+      svg {
+      width: 90%;
+      height: 90%;
+    }
+
+
+    }
+        }
+
+  .hiveLine {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    @extend .text;
+  }
+
+  .hiveCont {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    background: linear-gradient(
+      to right,
+      rgba($primaryD, 0.2),
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  .project {
+    @extend .text;
+    position: relative;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    &:hover {
+      color: $validD;
+      transform: scale(1.2);
+    }
+    &.active {
+      color: $validD;
+      transform: scale(1.1);
+    }
+  }
+
+  .pItem
+  {@extend .text;
+    padding: 10px;}
+  .pLign {
+    padding: 10px;
+    background: linear-gradient(
+      to right,
+      rgba($secondaryD, 0.6),
+      rgba($secondaryM, 0.2)
+    );
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #57575717;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  width: 60%;
+  background: rgba(47, 66, 107, 0.226);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(48, 48, 48, 0.514);
+}
+
+.slidefade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slidefade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slidefade-enter-from,
+.slidefade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
